@@ -1,0 +1,8 @@
+.talk{
+    width: 914.5px;
+    height: 41.058rem;
+    background-color: var(--primary-color);
+    display: flex;
+    flex-direction: column;
+    color: #ccc;
+}

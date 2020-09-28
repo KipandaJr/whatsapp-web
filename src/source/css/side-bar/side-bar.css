@@ -1,0 +1,6 @@
+.side-bar{
+    background-color: var(--secondary-color);
+    width: 450px;
+    height: 41.04rem;
+    border-right: 0.01px solid #6969699f;
+}

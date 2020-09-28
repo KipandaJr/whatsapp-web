@@ -1,0 +1,90 @@
+.itemMessage{
+    max-width: 100%;
+    height: 10%;
+    display: flex;
+    padding: 5px;
+    margin-top: 15px;
+}
+
+.itemMessage:hover{
+    background-color: rgb(92, 92, 92);
+    cursor: pointer;
+}
+
+.itemMessage .avatar{
+    border-radius: 40px;
+    width: 55px;
+    height: 55px;
+}
+
+.itemMessage div{
+    display: flex;
+    flex-direction: column;
+    width: 98%;
+    justify-content: center;
+}
+
+.itemMessage div div{
+    display: flex;
+    flex-direction: row;
+}
+
+.itemMessage div .topo{
+    justify-content: space-between;
+}
+
+.itemMessage div .topo .username{
+    font-size: 18px;
+    font-weight: 300;
+}
+
+.itemMessage div .topo .time{
+    font-size: 11px;
+    padding: 4px;
+    display: flex;
+    align-items: center;
+}
+
+.itemMessage div .bottom{
+    display: flex;
+    padding-left: 0px;
+    padding-bottom: 8px;
+    align-items: center;
+    margin-top: 6px;
+    border-bottom: 0.01px solid #6969699f;
+}
+
+.itemMessage div .bottom div{
+    display: flex;
+    justify-content: flex-start;
+}
+
+.itemMessage div .bottom div .miniMessage{
+    font-weight: 400;
+}
+
+.itemMessage div .bottom div .visto{
+    font-size: 12px;
+    font-weight: lighter;
+    padding: 4px;
+    padding-left: 0px;
+}
+
+.itemMessage div .bottom .numberSMS{
+    padding: 4px;
+    border-radius: 50px;
+    font-size: 12px;
+}
+
+.ativo{
+    background-color: var(--whatsapp-padrao);
+    color: black;
+}
+
+.ativo-txt{
+    color: var(--whatsapp-padrao);
+}
+
+.fa-check-double{
+    color: #2ca9fc;
+}

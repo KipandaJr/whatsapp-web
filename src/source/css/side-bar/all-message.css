@@ -1,0 +1,6 @@
+.allMessage{
+    max-height: 81%;
+    width: 100%;
+    overflow-x: auto;
+    color: #d3d3d3;
+}

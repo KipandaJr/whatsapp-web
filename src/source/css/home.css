@@ -1,0 +1,37 @@
+.home{
+    width: 900px;
+    height: 36.8rem;
+    background-color: var(--primary-color);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-content: space-between;
+    padding: 2rem;
+    color: #ccc;
+    text-align: center;
+    border-bottom: 0.25rem solid var(--whatsapp-padrao);
+}
+
+.img{
+    width: 15rem;
+}
+
+.home h1{
+    font-weight: 300;
+    margin-top: 1.7rem;
+}
+
+.home p{
+    line-height: 1.8rem;
+    margin-top: 0.7rem;
+}
+
+.home hr{
+    border: 1px solid #949393;
+    width: 60%;
+    margin-top: 3rem;
+}
+
+.home span{
+    margin-top: 3rem;
+}

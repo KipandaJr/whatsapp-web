@@ -1,0 +1,7 @@
+.bodyMessage{
+    width: 100%;
+    height: 540px;
+    background: url(../../images/fundo-conversa-1.jpg);
+    background-size: contain;
+    overflow-y: auto;
+}
