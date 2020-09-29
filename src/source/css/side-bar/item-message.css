@@ -85,6 +85,6 @@
     color: var(--whatsapp-padrao);
 }
 
-.fa-check-double{
+.itemMessage .fa-check-double{
     color: #2ca9fc;
 }

@@ -14,8 +14,41 @@ export default class App extends React.Component{
     this.state={
       showHome:true,
       Uavatar:null,
+      realBoxMessage:[{
+        to:'Maciel Martins',
+        from:'me',
+        content:'Ola',
+        check:false,
+        time:'22:23'
+      },{
+        from:'Maciel Martins',
+        to:'me',
+        content:'Ola Eu te amo',
+        check:false,
+        time:'22:23'
+      },{
+        from:'me',
+        to:'Maciel Martins',
+        content:'Mas eu não',
+        check:false,
+        time:'22:23'
+      },{
+        from:'Maciel Martins',
+        to:'me',
+        content:'Seu merdas...',
+        check:false,
+        time:'22:23'
+      }],
       Uusername:''
     }
+  }
+
+  prototipoBoxMessage={
+    to:'',
+    from:'',
+    content:'',
+    check:false,
+    time:''
   }
 
   usuarios={
@@ -57,7 +90,11 @@ export default class App extends React.Component{
     }
   }
 
-  
+  newMessage=(message)=>{
+    let array=this.state.realBoxMessage;
+    array.push(message);
+    this.setState({realBoxMessage:array});
+  }
 
   newTalk=(avatar,username)=>{
     this.setState({Uavatar:avatar});
@@ -65,11 +102,22 @@ export default class App extends React.Component{
     this.setState({showHome:false});
   }
 
+  allMessage=(username)=>{
+    let ourMessage=this.state.realBoxMessage.map((message)=>{
+      if(message.to===username || message.from===username){
+        return message;
+      }
+      return null;
+    });
+
+    return ourMessage;
+  }
+
   render(){
     return (
       <div className="container" >
           <SideBar usuarios={this.usuarios} showNewTalk={this.newTalk}/>
-          {this.state.showHome ? <Home/> : <Talk username={this.state.Uusername} avatar={this.state.Uavatar}/>}
+          {this.state.showHome ? <Home/> : <Talk username={this.state.Uusername} avatar={this.state.Uavatar} sendMessage={this.newMessage} myMessage={this.allMessage}/>}
       </div>
     )
   }

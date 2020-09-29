@@ -3,5 +3,56 @@
     height: 540px;
     background: url(../../images/fundo-conversa-1.jpg);
     background-size: contain;
-    overflow-y: auto;
+    padding-top: 17px;
+    display: flex;
+    flex-direction: column;
+    overflow: auto;
+    padding-bottom: 10px;
+}
+
+.bodyMessage .msg{
+    margin: 10px;
+    margin-top: 3px;
+    margin-bottom: 3px;
+    border-radius: 10px;
+    color: #fff;
+    padding: 10px;
+    max-width: 400px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+.msg div{
+    display: flex;
+    align-items: flex-end;
+}
+.msg div span:nth-child(1){
+    font-size: 10px;
+    padding: 5px;
+    color: #ccccccdc;
+    padding-bottom: 0;
+}
+
+.msg div span:nth-child(2){
+    font-size: 12px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    color: #ccccccdc;
+    font-weight: lighter;
+    padding-bottom: 0;
+}
+
+.me{
+    align-self: flex-end;
+    border: 1px solid #03332e;
+    background-color: #054740;
+    box-shadow: -2px 2px 3px #00110f;
+}
+
+.other{
+    align-self: flex-start;
+    border: 1px solid #262d31;
+    background-color: #262d31;
+    box-shadow: 2px 2px 3px #00110f;
 }
