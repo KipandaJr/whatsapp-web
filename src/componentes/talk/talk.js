@@ -15,8 +15,7 @@ function Talk(props){
             content:contentReceive,
             check:false,
             time:'20:34'
-          });
-
+        });
     }
     return (
         <div className="talk">

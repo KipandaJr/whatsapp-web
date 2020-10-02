@@ -8,7 +8,7 @@ function Options(props){
             <img src={props.avatar} className="profile" alt="ProfilePicture" />
             <ul>
                 <li> <i className="fa fa-compress"></i> </li>
-                <li> <i className="fa fa-comment-alt"></i> </li>
+                <li onClick={props.toogleNewChat}> <i className="fa fa-comment-alt"></i> </li>
                 <li> <i className="fa fa-ellipsis-v"></i> </li>
             </ul>
         </div>

@@ -24,7 +24,7 @@ export default class ItemMessage extends React.Component {
                             {this.props.marques===2 && 
                                 <i className="fa fa-check-double visto"></i>
                             }
-                            <span className="miniMessage">ABCDEFGHIJKLMNOPQRSTUVWXYZ</span>
+                            <span className="miniMessage">{this.props.content}</span>
                         </div>
                         {this.props.numberSMS>0 && 
                             <span className="numberSMS ativo">{this.props.numberSMS}</span>

@@ -1,0 +1,66 @@
+.new-chat{
+    width: 95%;
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--primary-color);
+    padding: 10.1px;
+    border-top: 0.01px solid #6969699f;
+    color:#dad8d8;
+}
+
+.new-chat h1{
+    font-size: 23px;
+    text-align: center;
+    text-transdiv: uppercase;
+    margin-bottom: 8px;
+}
+
+.new-chat div{
+    display: flex;
+    flex-direction: column;
+}
+
+.new-chat div label{
+    font-size: 18px;
+    margin-top: 10px;
+}
+
+.new-chat div input, .new-chat div textarea{
+    border: none;
+    background-color: #4e4e4ece;
+    border-radius: 5px;
+    padding: 5px;
+    padding-left: 10px;
+    font-size: 15px;
+    color: #fff;
+
+}
+
+.new-chat div input{
+    margin-bottom: 10px;
+    margin-top: 4px;
+    height: 35px;
+}
+
+.new-chat div textarea{
+    margin-bottom: 10px;
+    padding-top: 12px;
+}
+
+.new-chat div button{
+    height: 40px;
+    font-size: 18px;
+    background-color: var(--whatsapp-padrao);
+    opacity: .8;
+    border: none;
+    border-radius:8px;
+    cursor: pointer;
+    transition: .4s;
+    color:#ebebeb;
+
+}
+
+.new-chat div button:hover{
+    opacity: 1;   
+}

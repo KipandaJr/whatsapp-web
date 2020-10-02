@@ -7,6 +7,7 @@ import mePic from './source/images/user-avatar/avatar-me.jpg';
 import user1Pic from './source/images/user-avatar/avatar-1.jpg';
 import user2Pic from './source/images/user-avatar/avatar-2.jpg';
 import user3Pic from './source/images/user-avatar/avatar-3.jpg';
+import userPicPadrao from './source/images/user-avatar/padrao.jpg';
 
 export default class App extends React.Component{
   constructor(){
@@ -39,6 +40,44 @@ export default class App extends React.Component{
         check:false,
         time:'22:23'
       }],
+      usuarios:[
+        {
+          photo: mePic,
+        },
+        {
+          username:'Kipanda Cardoso',
+          photo: user1Pic,
+          lastMessage:{
+            id:1,
+            body:'Bro aqui tem uma cena bem boa... devias ver.',
+            time:'23:43',
+            visto:0
+          },
+          countAllMessage:4
+        },
+        {
+          username:'Maciel Martins',
+          photo: user2Pic,
+          lastMessage:{
+            id:1,
+            body:'Assim vais aceitar esse mambo mesmo?',
+            time:'12:43',
+            visto:1
+          },
+          countAllMessage:0
+        },
+        {
+          username:'JovemZinhaCorDeRosa',
+          photo: user3Pic,
+          lastMessage:{
+            id:1,
+            body:'Alguém aí do outro lado?',
+            time:'17:23',
+            visto:2
+          },
+          countAllMessage:10
+        }
+      ],
       Uusername:''
     }
   }
@@ -51,49 +90,37 @@ export default class App extends React.Component{
     time:''
   }
 
-  usuarios={
-    me:{
-      photo: mePic,
-    },
-    user1:{
-      username:'Kipanda Cardoso',
-      photo: user1Pic,
-      lastMessage:{
-        id:1,
-        body:'Bro aqui tem uma cena bem boa... devias ver.',
-        time:'23:43',
-        visto:0
-      },
-      countAllMessage:4
-    },
-    user2:{
-      username:'Maciel Martins',
-      photo: user2Pic,
-      lastMessage:{
-        id:1,
-        body:'Assim vais aceitar esse mambo mesmo?',
-        time:'12:43',
-        visto:1
-      },
-      countAllMessage:0
-    },
-    user3:{
-      username:'JovemZinhaCorDeRosa',
-      photo: user3Pic,
-      lastMessage:{
-        id:1,
-        body:'Alguém aí do outro lado?',
-        time:'17:23',
-        visto:2
-      },
-      countAllMessage:10
-    }
-  }
-
   newMessage=(message)=>{
     let array=this.state.realBoxMessage;
     array.push(message);
     this.setState({realBoxMessage:array});
+  }
+
+  newUser=(usernameSended,messageSended)=>{
+    let array=this.state.usuarios;
+    let user={
+      username:usernameSended,
+      photo: userPicPadrao,
+      lastMessage:{
+        id:1,
+        body:messageSended,
+        time:'23:43',
+        visto:0
+      },
+      countAllMessage:4
+    }
+    array.push(user);
+    this.setState({usuarios:array});
+  
+    let sms={
+      to:usernameSended,
+      from:'me',
+      content:messageSended,
+      check:false,
+      time:'20:34'
+    }
+
+    this.newMessage(sms);
   }
 
   newTalk=(avatar,username)=>{
@@ -107,7 +134,7 @@ export default class App extends React.Component{
       if(message.to===username || message.from===username){
         return message;
       }
-      return null;
+      //return null;
     });
 
     return ourMessage;
@@ -116,7 +143,7 @@ export default class App extends React.Component{
   render(){
     return (
       <div className="container" >
-          <SideBar usuarios={this.usuarios} showNewTalk={this.newTalk}/>
+          <SideBar usuarios={this.state.usuarios} showNewTalk={this.newTalk} addNewUser={this.newUser}/>
           {this.state.showHome ? <Home/> : <Talk username={this.state.Uusername} avatar={this.state.Uavatar} sendMessage={this.newMessage} myMessage={this.allMessage}/>}
       </div>
     )

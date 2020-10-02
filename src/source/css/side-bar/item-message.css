@@ -4,6 +4,7 @@
     display: flex;
     padding: 5px;
     margin-top: 15px;
+    transition: .5s;
 }
 
 .itemMessage:hover{
