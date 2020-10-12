@@ -7,10 +7,11 @@ function BodyMessage(props){
     return (
         <div className="bodyMessage">
             {   
-                messages.map((element,i)=>{
+                messages.map(function(element,i){
                     if(element!=null){
                         return <CardMessage key={i} who={element.from==='me'?'me':'other'} content={element.content} time={element.time}/>
                     }
+                    return null;
                 })
             }
         </div>
