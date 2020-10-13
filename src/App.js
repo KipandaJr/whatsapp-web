@@ -86,9 +86,46 @@ const App=()=>{
   );
   const [Uusername,setUusername]=useState('');
 
-  const getAllUser=()=>{
-    let oldUser=array;
-    fire.database().ref('users').on('child_added',value=>{
+  const getAllUser=async ()=>{
+    let oldUser=[
+      {
+        photo: mePic,
+      },
+      {
+        username:'Kipanda Cardoso',
+        photo: user1Pic,
+        lastMessage:{
+          id:1,
+          body:'Bro aqui tem uma cena bem boa... devias ver.',
+          time:'23:43',
+          visto:0
+        },
+        countAllMessage:4
+      },
+      {
+        username:'Maciel Martins',
+        photo: user2Pic,
+        lastMessage:{
+          id:1,
+          body:'Assim vais aceitar esse mambo mesmo?',
+          time:'12:43',
+          visto:1
+        },
+        countAllMessage:0
+      },
+      {
+        username:'JovemZinhaCorDeRosa',
+        photo: user3Pic,
+        lastMessage:{
+          id:1,
+          body:'Alguém aí do outro lado?',
+          time:'17:23',
+          visto:2
+        },
+        countAllMessage:10
+      }
+    ];
+    await fire.database().ref('users').on('child_added',value=>{
       oldUser.push({
         username:value.val().username,
         photo: value.val().photo,
@@ -133,9 +170,9 @@ const App=()=>{
     console.log(realBoxMessage);
   },[realBoxMessage]);*/
 
-  const getAllMessagesOnBD=()=>{
+  const getAllMessagesOnBD=async ()=>{
     let oldMessage=[];
-    fire.database().ref('messages').on('child_added',value=>{
+    await fire.database().ref('messages').on('child_added',value=>{
       oldMessage.push({
         to:value.val().to,
         from:value.val().from,
@@ -148,9 +185,13 @@ const App=()=>{
   }
 
   useEffect(()=>{
-    getAllUser();
     getAllMessagesOnBD();
   },[])
+  
+  useEffect(()=>{
+    getAllUser();
+  },[])
+
   const newMessage=(message)=>{
     /*let array=realBoxMessage.map((element)=>{
       return element
